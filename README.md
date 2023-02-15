@@ -1,4 +1,4 @@
-[Repositories] ~/OperatingSystem_study
+~/OperatingSystem_study
 ======================
 
 > 이 레포지토리는 필자가 운영체제에 대하여 공부한 것을 정리하기 위해 생성되었습니다.
