@@ -2,6 +2,8 @@
 
 defs.h : 구조체 + 함수 원형 정의
 
+param.h : 각종 파라미터, 상수들 정의
+
 ---
 # system call
 
@@ -25,4 +27,27 @@ cs(code segment selector)(0,1번째 비트는 cpl을 의미)
 
 ---
 
-#
+# Scheduling
+
+### Context Switch
+
+struct of context : proc.h에서 context가 가지고 있는 레지스터를 확인할 수 있다. (27-33)
+
+### Timer Interrupt
+
+Clock chip generates timer interrupt every 10 msec in xv6.
+increment tick variable and call wakeup();
+
+### yield
+
+A process that wants to give up CPU calls yield.
+
+### sched
+
+After sched calls swtch, stack pointer and the instruction address are returned (switched) to the CPU scheduler.
+swtch takes two arguments : struct context** old, struct context* new
+current process’s context, CPU-core’s scheduler context
+
+https://immature-ee.tistory.com/6
+https://80000coding.oopy.io/95018442-388c-4209-a835-021a0300f361
+ptable
